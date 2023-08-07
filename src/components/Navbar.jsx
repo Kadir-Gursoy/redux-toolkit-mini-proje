@@ -6,14 +6,15 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { clearUser } from "../app/features/authSlice";
+import { clearUser } from "../features/authSlice";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const {user} = useSelector((state)=>state.auth)
+  const {user} = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
 
   const handleLogout = ()=> {
-    dispatch(clearUser)
+    dispatch(clearUser())
   }
 
 
@@ -30,8 +31,8 @@ export default function Navbar() {
           >
             Clarusway News
           </Typography>
-          {user?.email  && <Button color="inherit" onClick= {handleLogout} >Logut</Button> }
-          {!user?.email  && <Button color="inherit">Login</Button> }
+          {user?.email  && (<Button color="inherit" onClick= {handleLogout} >Logut</Button> )}
+          {!user?.email  && ( <Button color="inherit">Login</Button>) }
          
         </Toolbar>
       </AppBar>

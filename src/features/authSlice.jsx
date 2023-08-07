@@ -14,7 +14,7 @@ reducers: {
         state.user = action.payload
     },
 
-    clearUser : (state, action) => {
+    clearUser : (state) => {
     state.user = ""
 }
  }

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setUser } from "../app/features/authSlice";
+import { setUser } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
 
 

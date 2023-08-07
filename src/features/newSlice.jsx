@@ -9,7 +9,7 @@ error: false,
 
 export const getNews = createAsyncThunk(
 
-"getNewsFunction",  //! action type name için
+"getNewsFunc",  //! action type name için
 async () => {
     const API_KEY = "a3c87228b8234e9ca794777fd97dac94"
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
@@ -28,7 +28,7 @@ async () => {
    reducers: {
      clearNews :(state)=> {
        state.news = []
-      }
+      },
     },
     //!createAsyncThunk metotu bir middleware olarak API gibi dış kaynaklı isteklerin redux ortamında oluşturulkmasını sağlar. Ancak API deki durumlara göre statlern güncellenöesini sağlamaz. Bunun için extraREducers kısmı kullanılır
     

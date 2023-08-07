@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CardMedia } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearNews } from "../app/features/newSlice";
+import { clearNews } from "../features/newSlice";
 
 const News = () => {
   dispatch (getNews())
@@ -15,12 +15,12 @@ const News = () => {
   const {news} = useSelector((state)=>state.api)
 
   //!news componeneti dom treeden kaldırılınca stattedki bilgileri temizle 
-return()=> {
-  dispatch(clearNews)
-}
 
   useEffect(() => {
   dispatch (getNews())
+  return()=> {
+    dispatch(clearNews())
+  }
   }, [])
   
 
